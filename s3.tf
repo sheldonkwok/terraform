@@ -10,5 +10,10 @@ resource "aws_s3_bucket" "sheldonkwok_backup" {
       days          = 30
       storage_class = "STANDARD_IA"
     }
+
+    transition {
+      days          = 60
+      storage_class = "GLACIER"
+    }
   }
 }
